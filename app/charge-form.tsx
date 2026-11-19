@@ -30,7 +30,10 @@ function NameSelect({ name, label }: { name: string; label: string }) {
 }
 
 export function ChargeForm() {
-  const [state, formAction, pending] = useActionState(submitCharge, initialState);
+  const [state, formAction, pending] = useActionState(
+    submitCharge,
+    initialState,
+  );
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -40,7 +43,7 @@ export function ChargeForm() {
   return (
     <form ref={formRef} action={formAction} className="flex flex-col gap-5">
       <h2 className="text-center text-2xl font-semibold uppercase tracking-widest">
-        Charges brought
+        Charges to be brought
       </h2>
       <NameSelect name="against" label="against" />
       <NameSelect name="by" label="by" />

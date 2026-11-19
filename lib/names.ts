@@ -18,6 +18,7 @@ export const NAMES = [
   "Simba",
   "Nathaniel",
   "Richard",
+  "Louis",
 ] as const;
 
 export const TOP_LIMIT = 5;
