@@ -1,4 +1,5 @@
 export const NAMES = [
+  "Anonymous",
   "Tinny",
   "Barky",
   "Hudo",

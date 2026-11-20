@@ -7,6 +7,9 @@ import { NAMES } from "@/lib/names";
 const initialState: SubmitState = { ok: false, message: "" };
 
 function NameSelect({ name, label }: { name: string; label: string }) {
+  const names =
+    name === "against" ? NAMES.filter((n) => n !== "Anonymous") : NAMES;
+
   return (
     <label className="flex items-center gap-3">
       <span className="w-20 text-right text-lg italic">{label}</span>
@@ -19,7 +22,7 @@ function NameSelect({ name, label }: { name: string; label: string }) {
         <option value="" disabled>
           Select a name…
         </option>
-        {NAMES.map((n) => (
+        {names.map((n) => (
           <option key={n} value={n}>
             {n}
           </option>

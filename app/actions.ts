@@ -23,6 +23,12 @@ export async function submitCharge(
   if (!isName(against) || !isName(by)) {
     return { ok: false, message: "Please select a name for both fields." };
   }
+  if (against === "Anonymous") {
+    return {
+      ok: false,
+      message: "Anonymous cannot be selected as the person charged.",
+    };
+  }
   if (!text) {
     return { ok: false, message: "Please enter the charge." };
   }
